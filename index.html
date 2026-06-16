@@ -3,860 +3,493 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inkwell Book Club — Where Readers Meet</title>
-  <meta name="description" content="Join Inkwell Book Club. Free weekly meetups, good company, and the best books — chosen by you.">
+  <title>Inkwell Book Club</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
       --ink:#1A1A2E;
-      --ember:#B85C3A;
+      --gold:#C9A96E;
       --cream:#F5EDE0;
       --page:#FAF6F0;
-      --gold:#C9A96E;
+      --ember:#B85C3A;
       --charcoal:#2D2D2D;
       --taupe:#7A7A7A;
-      --sage:#7A9A7A;
-      --font-heading:'Playfair Display',Georgia,serif;
-      --font-body:'Inter',-apple-system,sans-serif;
-      --radius:12px;
-      --shadow:0 2px 12px rgba(26,26,46,0.06);
+      --heading:'Playfair Display',Georgia,serif;
+      --body:'Inter',-apple-system,sans-serif;
+      --r:12px;
     }
     html{scroll-behavior:smooth}
     body{
-      font-family:var(--font-body);
+      font-family:var(--body);
       background:var(--page);
       color:var(--charcoal);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
+      line-height:1.5;
     }
-    img{display:block;max-width:100%;height:auto}
-    a{color:var(--ember);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1120px;margin:0 auto;padding:0 24px}
-    .sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+    img{display:block;max-width:100%}
+    a{color:var(--gold);text-decoration:none}
+    .container{max-width:960px;margin:0 auto;padding:0 20px}
+    .tc{text-align:center}
+    .sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0)}
 
-    /* ── Header ── */
-    .site-header{
+    /* Header */
+    .hdr{
       position:sticky;top:0;z-index:100;
-      background:rgba(250,246,240,0.92);
-      backdrop-filter:blur(8px);
+      background:rgba(250,246,240,0.92);backdrop-filter:blur(8px);
       border-bottom:1px solid rgba(0,0,0,0.06);
     }
-    .header-inner{
+    .hdr-inner{
       display:flex;align-items:center;justify-content:space-between;
-      padding:14px 0;gap:12px;
+      padding:12px 0;
     }
-    .header-logo{
-      display:flex;align-items:center;gap:10px;
-      font-family:var(--font-heading);
-      font-size:20px;font-weight:600;
+    .hdr-logo{
+      font-family:var(--heading);font-size:18px;font-weight:600;
       color:var(--ink);
     }
-    .header-logo span{color:var(--gold)}
-    .header-logo svg{width:32px;height:32px}
-    .header-nav{display:flex;gap:20px;align-items:center}
-    .header-nav a{
-      font-size:14px;font-weight:500;color:var(--charcoal);
-      transition:color .2s;
-    }
-    .header-nav a:hover{color:var(--ember);text-decoration:none}
+    .hdr-logo span{color:var(--gold)}
+    .hdr-nav{display:flex;gap:16px}
+    .hdr-nav a{font-size:13px;font-weight:500;color:var(--charcoal)}
+    .hdr-nav a:hover{color:var(--ember)}
 
-    /* ── Hero ── */
+    /* Hero */
     .hero{
-      position:relative;
-      background:linear-gradient(160deg,#2D2A2B 0%,#1A1A2E 40%,#2D2A2B 100%);
-      overflow:hidden;
-      padding:80px 0 70px;
-      min-height:70vh;
-      display:flex;align-items:center;
-    }
-    .hero-bg{
-      position:absolute;inset:0;
-      background-image:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1400&q=80');
-      background-size:cover;background-position:center 40%;
-      opacity:0.20;
-      filter:sepia(0.3) saturate(0.8);
-    }
-    .hero-overlay{
-      position:absolute;inset:0;
-      background:linear-gradient(160deg,rgba(26,26,46,0.85) 0%,rgba(45,42,43,0.75) 100%);
-    }
-    .hero .container{position:relative;z-index:2;text-align:center}
-    .hero-label{
-      font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
-      color:var(--gold);margin-bottom:16px;
+      background:linear-gradient(160deg,#1A1A2E 0%,#2D2A2B 100%);
+      padding:80px 0;
+      text-align:center;
     }
     .hero h1{
-      font-family:var(--font-heading);
-      font-size:38px;font-weight:600;
-      color:#fff;line-height:1.2;
-      margin-bottom:16px;
+      font-family:var(--heading);
+      font-size:36px;font-weight:600;color:#fff;
+      margin-bottom:12px;
     }
     .hero h1 em{font-style:italic;color:var(--gold)}
-    .hero-subtitle{
-      font-size:16px;color:rgba(255,255,255,0.75);
-      max-width:540px;margin:0 auto 32px;
-      font-weight:300;line-height:1.7;
+    .hero p{
+      font-size:15px;color:rgba(255,255,255,0.7);
+      max-width:480px;margin:0 auto 28px;
+      font-weight:300;
     }
-    .btn-primary{
-      display:inline-flex;align-items:center;gap:8px;
-      font-family:var(--font-body);font-size:15px;font-weight:500;
-      padding:14px 32px;
+    .btn{
+      display:inline-block;
+      font-family:var(--body);font-size:14px;font-weight:500;
+      padding:12px 28px;
       background:var(--gold);color:var(--ink);
-      border:none;border-radius:var(--radius);
-      cursor:pointer;min-height:48px;
-      transition:background .2s,transform .1s;
+      border:none;border-radius:var(--r);
+      cursor:pointer;min-height:44px;
+      transition:background .2s;
     }
-    .btn-primary:hover{background:#bd9a58;text-decoration:none}
-    .btn-primary:active{transform:scale(0.97)}
-    .btn-outline{
-      display:inline-flex;align-items:center;gap:8px;
-      font-family:var(--font-body);font-size:15px;font-weight:500;
-      padding:14px 32px;
+    .btn:hover{background:#bd9a58}
+    .btn-o{
+      display:inline-block;
+      font-family:var(--body);font-size:14px;font-weight:500;
+      padding:12px 28px;
       background:transparent;color:#fff;
-      border:1px solid rgba(255,255,255,0.3);border-radius:var(--radius);
-      cursor:pointer;min-height:48px;
-      transition:background .2s,border-color .2s;
+      border:1px solid rgba(255,255,255,0.25);
+      border-radius:var(--r);
+      margin-left:8px;
+      transition:background .2s;
     }
-    .btn-outline:hover{background:rgba(255,255,255,0.08);border-color:var(--gold);text-decoration:none}
-    .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn-o:hover{background:rgba(255,255,255,0.08)}
+    .actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 
-    /* ── Section common ── */
-    .section{padding:64px 0}
-    .section-dark{background:var(--ink);color:rgba(255,255,255,0.85)}
-    .section-cream{background:var(--cream)}
-    .section-label{
+    /* Sections */
+    .sec{padding:56px 0}
+    .sec-dark{background:var(--ink);color:rgba(255,255,255,0.85)}
+    .sec-cream{background:var(--cream)}
+    .label{
       font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
       color:var(--gold);margin-bottom:6px;
     }
-    .section-title{
-      font-family:var(--font-heading);
-      font-size:30px;font-weight:600;
-      color:var(--ink);margin-bottom:10px;line-height:1.25;
+    .title{
+      font-family:var(--heading);
+      font-size:28px;font-weight:600;
+      color:var(--ink);margin-bottom:8px;
     }
-    .section-dark .section-title{color:#fff}
-    .section-desc{
-      font-size:15px;color:var(--taupe);
-      margin-bottom:36px;max-width:560px;
+    .sec-dark .title{color:#fff}
+    .desc{
+      font-size:14px;color:var(--taupe);margin-bottom:28px;max-width:480px;
     }
-    .section-dark .section-desc{color:rgba(255,255,255,0.6)}
-    .text-center{text-align:center}
-    .text-center .section-desc{margin-left:auto;margin-right:auto}
+    .sec-dark .desc{color:rgba(255,255,255,0.55)}
+    .tc .desc{margin-left:auto;margin-right:auto}
+    .div{width:36px;height:2px;background:var(--gold);margin:0 auto 20px}
 
-    /* ── Current Pick ── */
-    .pick-wrap{
-      display:flex;flex-direction:column;gap:32px;
-      align-items:center;
-    }
-    .pick-cover{
-      flex-shrink:0;
-      width:220px;
-      position:relative;
-    }
-    .pick-cover img{
-      width:100%;
-      border-radius:8px;
-      box-shadow:0 8px 32px rgba(0,0,0,0.15);
-    }
-    .pick-cover-badge{
-      position:absolute;top:-10px;right:-10px;
-      background:var(--ember);color:#fff;
-      font-size:11px;font-weight:600;letter-spacing:0.05em;
-      padding:6px 12px;border-radius:20px;
-    }
-    .pick-info{text-align:center}
-    .pick-tag{
-      font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
-      color:var(--ember);margin-bottom:4px;
-    }
-    .pick-info h3{
-      font-family:var(--font-heading);
-      font-size:24px;font-weight:600;
-      color:var(--ink);margin-bottom:2px;
-    }
-    .pick-author{
-      font-size:14px;color:var(--taupe);margin-bottom:12px;
-    }
-    .pick-rating{
-      display:flex;align-items:center;justify-content:center;gap:6px;
-      margin-bottom:14px;
-    }
-    .pick-rating .stars{color:var(--gold);font-size:18px;letter-spacing:2px}
-    .pick-rating span{font-size:13px;color:var(--taupe)}
-    .pick-desc{
-      font-size:14px;color:#555;line-height:1.7;
-      max-width:480px;
-    }
-    .pick-meta{
-      display:flex;gap:16px;justify-content:center;margin-top:14px;flex-wrap:wrap;
-    }
-    .pick-meta-item{
-      font-size:12px;color:var(--taupe);
-      display:flex;align-items:center;gap:4px;
-    }
-    .pick-meta-item strong{color:var(--charcoal)}
+    /* Book */
+    .book-wrap{display:flex;flex-direction:column;gap:24px;align-items:center}
+    .book-cover{width:200px;flex-shrink:0}
+    .book-cover img{width:100%;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,0.12)}
+    .book-info{text-align:center}
+    .book-info h3{font-family:var(--heading);font-size:22px;font-weight:600;color:var(--ink)}
+    .book-author{font-size:14px;color:var(--taupe);margin-bottom:6px}
+    .stars{color:var(--gold);font-size:16px;letter-spacing:2px}
+    .book-meta{font-size:13px;color:var(--taupe);margin-top:8px}
 
-    /* ── Goodreads Reviews ── */
-    .reviews-grid{
-      display:flex;flex-direction:column;gap:16px;
-    }
-    .review-card{
-      background:#fff;
-      border-radius:var(--radius);
-      padding:20px;
-      box-shadow:var(--shadow);
+    /* Reviews */
+    .revs{display:flex;flex-direction:column;gap:12px}
+    .rev{
+      background:#fff;border-radius:var(--r);padding:16px 18px;
       border-left:3px solid var(--gold);
     }
-    .review-header{
-      display:flex;align-items:center;gap:10px;margin-bottom:8px;
-    }
-    .review-avatar{
-      width:36px;height:36px;border-radius:50%;
-      background:var(--cream);display:flex;align-items:center;justify-content:center;
-      font-family:var(--font-heading);font-size:14px;color:var(--ember);
-      flex-shrink:0;
-    }
-    .review-name{font-size:13px;font-weight:600;color:var(--ink)}
-    .review-date{font-size:11px;color:var(--taupe)}
-    .review-stars{color:var(--gold);font-size:14px;letter-spacing:1px;margin-bottom:4px}
-    .review-text{font-size:14px;color:#555;line-height:1.6}
-    .review-source{
-      font-size:11px;color:var(--taupe);margin-top:6px;
-      display:flex;align-items:center;gap:4px;
-    }
-    .review-source svg{width:14px;height:14px;fill:currentColor}
+    .rev h4{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:2px}
+    .rev .stars{font-size:13px;margin-bottom:4px;display:block}
+    .rev p{font-size:13px;color:#555;line-height:1.6}
+    .rev small{font-size:11px;color:var(--taupe)}
 
-    /* ── Bookclub ── */
-    .club-features{
-      display:flex;flex-direction:column;gap:16px;
-    }
+    /* Club */
+    .club-grid{display:flex;flex-direction:column;gap:12px}
     .club-card{
-      background:rgba(255,255,255,0.06);
+      background:rgba(255,255,255,0.05);
       border:1px solid rgba(255,255,255,0.1);
-      border-radius:var(--radius);
-      padding:24px 20px;
-      text-align:center;
+      border-radius:var(--r);padding:20px;text-align:center;
     }
-    .club-card-icon{
-      width:48px;height:48px;margin:0 auto 12px;
-      border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-    }
-    .club-card-icon svg{width:24px;height:24px}
-    .club-card h3{
-      font-family:var(--font-heading);
-      font-size:18px;font-weight:600;color:#fff;
-      margin-bottom:4px;
-    }
-    .club-card p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.6}
-    .club-highlight{
+    .club-card h3{font-family:var(--heading);font-size:17px;font-weight:600;color:#fff;margin-bottom:4px}
+    .club-card p{font-size:13px;color:rgba(255,255,255,0.6)}
+    .club-ft{
       background:rgba(201,169,110,0.1);
-      border:1px solid rgba(201,169,110,0.3);
-      border-radius:var(--radius);
-      padding:24px 20px;
-      text-align:center;
-      margin-top:8px;
+      border:1px solid rgba(201,169,110,0.25);
+      border-radius:var(--r);padding:16px;text-align:center;margin-top:8px;
     }
-    .club-highlight h3{
-      font-family:var(--font-heading);
-      font-size:20px;font-weight:600;color:var(--gold);
-      margin-bottom:6px;
-    }
-    .club-highlight p{font-size:14px;color:rgba(255,255,255,0.7)}
+    .club-ft p{font-size:14px;color:var(--gold)}
 
-    /* ── Poll ── */
-    .poll-books{
-      display:flex;flex-direction:column;gap:12px;
+    /* Poll */
+    .poll-item{
+      background:#fff;border-radius:var(--r);padding:14px 16px;
+      display:flex;align-items:center;gap:12px;cursor:pointer;
+      border:2px solid transparent;margin-bottom:8px;
     }
-    .poll-book{
-      background:#fff;
-      border-radius:var(--radius);
-      padding:16px 20px;
-      box-shadow:var(--shadow);
-      display:flex;align-items:center;gap:16px;
-      cursor:pointer;
-      transition:all .2s;
-      border:2px solid transparent;
-    }
-    .poll-book:hover{border-color:var(--cream)}
-    .poll-book.selected{
-      border-color:var(--gold);
-      background:#fdf9f2;
-    }
-    .poll-radio{
-      width:22px;height:22px;
-      border-radius:50%;
-      border:2px solid #ccc;
+    .poll-item:hover{border-color:var(--cream)}
+    .poll-item.sel{border-color:var(--gold);background:#fdf9f2}
+    .poll-dot{
+      width:20px;height:20px;border-radius:50%;
+      border:2px solid #ccc;flex-shrink:0;
       display:flex;align-items:center;justify-content:center;
-      flex-shrink:0;
-      transition:all .2s;
     }
-    .poll-book.selected .poll-radio{
-      border-color:var(--gold);
-      background:var(--gold);
-    }
-    .poll-radio-inner{
-      width:8px;height:8px;border-radius:50%;
-      background:#fff;display:none;
-    }
-    .poll-book.selected .poll-radio-inner{display:block}
-    .poll-book-info{flex:1}
-    .poll-book-info h4{
-      font-family:var(--font-heading);
-      font-size:16px;font-weight:600;color:var(--ink);
-      margin-bottom:1px;
-    }
-    .poll-book-info .author{font-size:13px;color:var(--taupe)}
-    .poll-book-info .meta{
-      font-size:12px;color:var(--sage);margin-top:2px;
-      display:flex;align-items:center;gap:4px;
-    }
-    .poll-votes{
-      font-size:13px;font-weight:500;color:var(--taupe);
-      text-align:right;flex-shrink:0;
-    }
-    .poll-bar-wrap{
-      margin-top:20px;
-    }
-    .poll-bar-bg{
-      background:var(--cream);border-radius:20px;height:6px;overflow:hidden;
-    }
-    .poll-bar-fill{
-      height:100%;border-radius:20px;
-      background:var(--gold);
-      transition:width .6s ease;
-    }
-    .poll-count{font-size:13px;color:var(--taupe);margin-top:6px;text-align:center}
+    .poll-item.sel .poll-dot{border-color:var(--gold);background:var(--gold)}
+    .poll-item.sel .poll-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:#fff}
+    .poll-info{flex:1}
+    .poll-info h4{font-size:15px;font-weight:600;color:var(--ink)}
+    .poll-info span{font-size:12px;color:var(--taupe)}
+    .poll-num{font-size:13px;color:var(--taupe)}
 
-    /* ── Signup ── */
-    .signup-form{
-      display:flex;flex-direction:column;gap:12px;
-      max-width:440px;margin:0 auto;
+    /* Form */
+    .frm{max-width:400px;margin:0 auto}
+    .frm input,.frm select{
+      width:100%;font-family:var(--body);font-size:14px;
+      padding:12px 14px;border:1px solid #ddd;border-radius:var(--r);
+      min-height:44px;margin-bottom:10px;
     }
-    .signup-form input,.signup-form select{
-      font-family:var(--font-body);font-size:15px;
-      padding:12px 16px;
-      border:1px solid #ddd;border-radius:var(--radius);
-      min-height:48px;
-      background:#fff;
-      color:var(--charcoal);
-    }
-    .signup-form input::placeholder{color:#999}
-    .signup-form input:focus,.signup-form select:focus{
-      outline:2px solid var(--gold);outline-offset:2px;
-      border-color:var(--gold);
-    }
-    .gdpr-note{
-      font-size:12px;color:rgba(255,255,255,0.5);
-      margin-top:4px;text-align:center;
-    }
-    .gdpr-note a{color:var(--gold)}
-    .form-feedback{
-      font-size:14px;padding:10px 14px;border-radius:var(--radius);
-      display:none;text-align:center;
-    }
-    .form-feedback.success{display:block;background:#e6f4ea;color:#1e7e34}
-    .form-feedback.error{display:block;background:#fce8e6;color:#c5221f}
+    .frm input:focus,.frm select:focus{outline:2px solid var(--gold)}
+    .frm .btn{width:100%;justify-content:center;display:flex}
 
-    /* ── FAQ ── */
-    .faq-list{display:flex;flex-direction:column;gap:8px}
-    .faq-item{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
-    .faq-question{
-      width:100%;font-family:var(--font-body);font-size:15px;font-weight:500;
-      color:var(--ink);padding:16px 20px;background:#fff;border:none;
-      cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;
-      text-align:left;min-height:48px;transition:background .2s;
-    }
-    .faq-question:hover{background:#faf5ef}
-    .faq-question:focus{outline:2px solid var(--gold);outline-offset:-2px}
-    .faq-icon{flex-shrink:0;width:20px;height:20px;transition:transform .3s;color:var(--gold)}
-    .faq-item.open .faq-icon{transform:rotate(180deg)}
-    .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
-    .faq-answer-inner{padding:0 20px 16px;font-size:14px;color:#555;line-height:1.7}
-    .faq-item.open .faq-answer{max-height:400px}
+    /* Gallery */
+    .gal{display:flex;flex-direction:column;gap:10px}
+    .gal img{width:100%;height:200px;object-fit:cover;border-radius:var(--r)}
+    .gal-cap{font-size:12px;color:var(--taupe);text-align:center;font-style:italic;margin-top:4px}
 
-    /* ── Notting Hill Gallery ── */
-    .gallery-grid{
-      display:flex;flex-direction:column;gap:12px;
+    /* FAQ */
+    .faq{max-width:600px;margin:0 auto}
+    .faq-q{
+      width:100%;font-size:14px;font-weight:500;
+      padding:14px 16px;background:#fff;border:none;border-bottom:1px solid #eee;
+      cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+      text-align:left;color:var(--ink);
     }
-    .gallery-item{
-      border-radius:var(--radius);overflow:hidden;
-      position:relative;
-      aspect-ratio:16/9;
-    }
-    .gallery-item img{
-      width:100%;height:100%;object-fit:cover;
-      transition:transform .4s;
-    }
-    .gallery-item:hover img{transform:scale(1.03)}
-    .gallery-caption{
-      position:absolute;bottom:0;left:0;right:0;
-      padding:24px 16px 12px;
-      background:linear-gradient(transparent,rgba(0,0,0,0.7));
-      color:#fff;font-size:13px;text-align:center;
-    }
-    .gallery-caption em{font-style:italic;color:var(--gold)}
+    .faq-q::after{content:'▾';color:var(--gold);font-size:12px;transition:transform .3s}
+    .faq-item.open .faq-q::after{transform:rotate(180deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+    .faq-a-inner{padding:8px 16px 14px;font-size:13px;color:#555;line-height:1.6}
 
-    /* ── Footer ── */
-    .site-footer{
-      background:var(--ink);color:rgba(255,255,255,0.6);
-      padding:40px 0 32px;
+    /* Footer */
+    .ftr{
+      background:var(--ink);color:rgba(255,255,255,0.5);
+      padding:32px 0;text-align:center;font-size:13px;
     }
-    .footer-inner{
-      display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center;
-    }
-    .footer-logo{
-      font-family:var(--font-heading);font-size:18px;font-weight:600;color:#fff;
-    }
-    .footer-logo span{color:var(--gold)}
-    .footer-tagline{
-      font-family:var(--font-heading);font-size:15px;font-style:italic;
-      color:var(--gold);opacity:0.7;
-    }
-    .footer-links{display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;justify-content:center}
-    .footer-links a{font-size:13px;color:rgba(255,255,255,0.55)}
-    .footer-links a:hover{color:#fff}
-    .footer-copy{font-size:12px}
+    .ftr strong{color:rgba(255,255,255,0.8)}
+    .ftr span{color:var(--gold)}
 
-    /* ── Divide ── */
-    .divide{
-      width:40px;height:2px;background:var(--gold);
-      margin:0 auto 16px;
-    }
-    .divide-left{margin:0 0 16px}
-
-    /* ── Desktop ── */
     @media(min-width:640px){
-      .hero{padding:100px 0 80px;min-height:60vh}
-      .hero h1{font-size:48px}
-      .pick-wrap{flex-direction:row;text-align:left}
-      .pick-info{text-align:left}
-      .pick-rating{justify-content:flex-start}
-      .pick-meta{justify-content:flex-start}
-      .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-      .club-features{flex-direction:row}
+      .hero{padding:100px 0}
+      .hero h1{font-size:44px}
+      .book-wrap{flex-direction:row;text-align:left}
+      .book-info{text-align:left}
+      .revs{flex-direction:row}
+      .rev{flex:1}
+      .club-grid{flex-direction:row}
       .club-card{flex:1}
-      .poll-books{max-width:600px;margin:0 auto}
-      .gallery-grid{flex-direction:row}
-      .gallery-item{flex:1;aspect-ratio:4/3}
-      .footer-inner{flex-direction:row;justify-content:space-between;text-align:left}
-    }
-    @media(min-width:900px){
-      .hero h1{font-size:56px}
-      .section-title{font-size:34px}
-      .reviews-grid{grid-template-columns:repeat(3,1fr)}
-      .pick-cover{width:260px}
+      .gal{flex-direction:row}
+      .gal img{height:220px}
     }
   </style>
 </head>
 <body>
 
-  <!-- ═══ Header ═══ -->
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a href="/" class="header-logo" aria-label="Inkwell home">
-        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <rect x="4" y="3" width="24" height="26" rx="3" fill="#C9A96E"/>
-          <rect x="8" y="7" width="7" height="16" rx="1" fill="#1A1A2E" opacity="0.8"/>
-          <rect x="17" y="7" width="7" height="12" rx="1" fill="#1A1A2E" opacity="0.8"/>
-        </svg>
-        Inkwell <span>Book Club</span>
-      </a>
-      <nav class="header-nav" aria-label="Main navigation">
-        <a href="#current">This Month</a>
-        <a href="#club">The Club</a>
+  <header class="hdr">
+    <div class="container hdr-inner">
+      <div class="hdr-logo">Inkwell <span>Book Club</span></div>
+      <nav class="hdr-nav">
+        <a href="#book">Book</a>
+        <a href="#club">Club</a>
         <a href="#vote">Vote</a>
         <a href="#join">Join</a>
       </nav>
     </div>
   </header>
 
-  <!-- ═══ Hero ═══ -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-overlay" aria-hidden="true"></div>
+  <section class="hero">
     <div class="container">
-      <p class="hero-label">Inkwell Book Club</p>
-      <h1 id="hero-title">Where books bring <em>people</em> together.</h1>
-      <p class="hero-subtitle">Free weekly meetups in your local Inkwell branch. One hour. Great books. Good company. Just show your loyalty card and step into the conversation.</p>
-      <div class="hero-actions">
-        <a href="#join" class="btn-primary">Join the Club →</a>
-        <a href="#current" class="btn-outline">This Month's Pick</a>
+      <h1>Where books bring <em>people</em> together.</h1>
+      <p>Free weekly book club at your local Inkwell. One hour. Good books. Better company. Show your loyalty card and join the table.</p>
+      <div class="actions">
+        <a href="#join" class="btn">Join Free →</a>
+        <a href="#book" class="btn-o">This Month's Book</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ This Month's Pick ═══ -->
-  <section class="section" id="current" aria-labelledby="pick-title">
+  <section class="sec" id="book">
     <div class="container">
-      <p class="section-label text-center">This Month's Pick</p>
-      <h2 class="section-title text-center" id="pick-title">Chosen by the community.</h2>
-      <p class="section-desc text-center">Top-rated on Goodreads. Voted by Inkwell members. Discussed in your local branch.</p>
-      <div class="divide"></div>
-      <div class="pick-wrap">
-        <div class="pick-cover">
-          <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&q=80" alt="The Picture of Dorian Gray book cover">
-          <span class="pick-cover-badge">#1 Pick</span>
+      <p class="label tc">This Month's Pick</p>
+      <h2 class="title tc">Chosen by you.</h2>
+      <p class="desc tc">Voted by Inkwell members. Discussed at your local branch.</p>
+      <div class="div"></div>
+      <div class="book-wrap">
+        <div class="book-cover">
+          <img src="https://covers.openlibrary.org/b/isbn/0141442468-L.jpg" alt="The Picture of Dorian Gray - Penguin Clothbound edition">
         </div>
-        <div class="pick-info">
-          <p class="pick-tag">Selected by Inkwell Members</p>
+        <div class="book-info">
           <h3>The Picture of Dorian Gray</h3>
-          <p class="pick-author">Oscar Wilde</p>
-          <div class="pick-rating">
-            <span class="stars">★★★★★</span>
-            <span>4.12 · 1.7M ratings</span>
-          </div>
-          <p class="pick-desc">A masterpiece of wit and warning. When Dorian Gray's portrait ages while he stays forever young, he discovers the terrible cost of vanity. Timeless. Haunting. Brilliant.</p>
-          <div class="pick-meta">
-            <span class="pick-meta-item">📖 <strong>272</strong> pages</span>
-            <span class="pick-meta-item">📅 <strong>Thu 18 Dec</strong> — next meetup</span>
-            <span class="pick-meta-item">⏱ <strong>1 hour</strong> — free entry</span>
-          </div>
+          <p class="book-author">Oscar Wilde</p>
+          <div class="stars">★★★★★</div>
+          <p style="font-size:13px;color:#555;margin-top:10px;line-height:1.6;max-width:400px">A young man's wish for eternal youth turns his portrait into a mirror of his soul. Wilde's only novel — as sharp and haunting as the day it was written.</p>
+          <div class="book-meta">272 pages · Meetup: Thu 18 Dec · Free entry</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ Goodreads Reviews ═══ -->
-  <section class="section section-cream" aria-labelledby="reviews-title">
+  <section class="sec sec-cream">
     <div class="container">
-      <p class="section-label text-center">What Readers Are Saying</p>
-      <h2 class="section-title text-center" id="reviews-title">Top Goodreads reviews.</h2>
-      <p class="section-desc text-center">See why readers love this month's pick. Then come discuss it with us.</p>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">S</div>
-            <div>
-              <div class="review-name">Sarah Mitchell</div>
-              <div class="review-date">Reviewed 2 weeks ago</div>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Every time I read it I find something new. The prose is razor-sharp, the themes disturbingly relevant. A perfect choice for the book club."</p>
-          <div class="review-source">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-            Goodreads
-          </div>
+      <p class="label tc">Goodreads</p>
+      <h2 class="title tc">What readers say.</h2>
+      <p class="desc tc">Top reviews from the Inkwell community.</p>
+      <div class="revs">
+        <div class="rev">
+          <span class="stars">★★★★★</span>
+          <p>"Every time I read it I find something new. Razor-sharp prose, disturbingly relevant themes. Perfect book club choice."</p>
+          <small>— Sarah M. · 2 weeks ago</small>
         </div>
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">J</div>
-            <div>
-              <div class="review-name">James Carter</div>
-              <div class="review-date">Reviewed 1 week ago</div>
-            </div>
-          </div>
-          <div class="review-stars">★★★★☆</div>
-          <p class="review-text">"My first Oscar Wilde. I didn't expect to be this moved. Can't wait to talk about the ending with the group — I have so many questions."</p>
-          <div class="review-source">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-            Goodreads
-          </div>
+        <div class="rev">
+          <span class="stars">★★★★☆</span>
+          <p>"My first Oscar Wilde. Didn't expect to be this moved. Can't wait to talk about the ending with the group."</p>
+          <small>— James C. · 1 week ago</small>
         </div>
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">P</div>
-            <div>
-              <div class="review-name">Priya Desai</div>
-              <div class="review-date">Reviewed 3 days ago</div>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"The portrait metaphor stays with you long after you close the book. Can't recommend this enough. So glad Inkwell picked this."</p>
-          <div class="review-source">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-            Goodreads
-          </div>
+        <div class="rev">
+          <span class="stars">★★★★★</span>
+          <p>"The portrait metaphor stays with you long after you close the book. So glad Inkwell picked this."</p>
+          <small>— Priya D. · 3 days ago</small>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ The Bookclub ═══ -->
-  <section class="section section-dark" id="club" aria-labelledby="club-title">
+  <section class="sec sec-dark" id="club">
     <div class="container">
-      <p class="section-label text-center">The Bookclub</p>
-      <h2 class="section-title text-center" id="club-title">A place for readers.</h2>
-      <p class="section-desc text-center">No homework. No pressure. Just one hour of great conversation about a book you already love.</p>
-      <div class="divide"></div>
-      <div class="club-features">
+      <p class="label tc">The Club</p>
+      <h2 class="title tc">One hour. Free. Every week.</h2>
+      <p class="desc tc">No homework. No pressure. Just conversation about a book you love.</p>
+      <div class="div"></div>
+      <div class="club-grid">
         <div class="club-card">
-          <div class="club-card-icon" style="background:rgba(201,169,110,0.15)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-            </svg>
-          </div>
-          <h3>1 Hour · Free</h3>
-          <p>Every Thursday evening. Drop in, grab a drink, join the table. No commitment — just show your Inkwell loyalty card at the door.</p>
+          <h3>☕ Free Drinks</h3>
+          <p>Tea, coffee, biscuits — on us. Walk in, grab a cup, take a seat.</p>
         </div>
         <div class="club-card">
-          <div class="club-card-icon" style="background:rgba(201,169,110,0.15)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
-            </svg>
-          </div>
-          <h3>Meet Fellow Readers</h3>
-          <p>Connect with people who love the same books you do. It's not a lecture — it's a conversation. Tea, coffee, and biscuits on us.</p>
+          <h3>🎫 Show Your Card</h3>
+          <p>Just your Inkwell loyalty card at the door. No ticket. No fee.</p>
         </div>
         <div class="club-card">
-          <div class="club-card-icon" style="background:rgba(201,169,110,0.15)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
-            </svg>
-          </div>
-          <h3>Your Choice, Every Month</h3>
-          <p>You vote. We pick. The book with the most votes becomes next month's club read. Check reviews on Goodreads, then cast your ballot below.</p>
+          <h3>🗳️ You Choose</h3>
+          <p>Every month, members vote on the next book. The winner becomes our pick.</p>
         </div>
       </div>
-      <div class="club-highlight">
-        <h3>☕ Free drinks · No purchase needed</h3>
-        <p>Just walk in, show your Inkwell loyalty card, and join the table. New faces are always welcome.</p>
-      </div>
+      <div class="club-ft"><p>Thursdays at 7pm · All Inkwell branches · New faces always welcome</p></div>
     </div>
   </section>
 
-  <!-- ═══ Vote for Next Book ═══ -->
-  <section class="section section-cream" id="vote" aria-labelledby="vote-title">
+  <section class="sec" id="vote">
     <div class="container">
-      <p class="section-label text-center">Vote Now</p>
-      <h2 class="section-title text-center" id="vote-title">What should we read next?</h2>
-      <p class="section-desc text-center">Check the Goodreads reviews, then pick your favourite. The winning book becomes next month's club read.</p>
-      <div class="divide"></div>
-      <form class="poll-books" id="poll-form" novalidate>
-        <label class="poll-book" for="book-a">
-          <div class="poll-radio"><div class="poll-radio-inner"></div></div>
-          <input type="radio" name="next-book" id="book-a" value="the-secret-history" hidden>
-          <div class="poll-book-info">
+      <p class="label tc">Vote</p>
+      <h2 class="title tc">What should we read next?</h2>
+      <p class="desc tc">Check the Goodreads reviews, then pick your favourite.</p>
+      <div class="div"></div>
+      <form id="poll-form">
+        <label class="poll-item" for="b1">
+          <div class="poll-dot"></div>
+          <input type="radio" name="book" id="b1" value="secret-history" hidden>
+          <div class="poll-info">
             <h4>The Secret History</h4>
-            <div class="author">Donna Tartt</div>
-            <div class="meta">★★★★☆ 4.0 · 1M+ ratings</div>
+            <span>Donna Tartt · ★★★★☆ 4.0</span>
           </div>
-          <span class="poll-votes">42 votes</span>
+          <span class="poll-num">42</span>
         </label>
-        <label class="poll-book" for="book-b">
-          <div class="poll-radio"><div class="poll-radio-inner"></div></div>
-          <input type="radio" name="next-book" id="book-b" value="northanger-abbey" hidden>
-          <div class="poll-book-info">
+        <label class="poll-item" for="b2">
+          <div class="poll-dot"></div>
+          <input type="radio" name="book" id="b2" value="northanger" hidden>
+          <div class="poll-info">
             <h4>Northanger Abbey</h4>
-            <div class="author">Jane Austen</div>
-            <div class="meta">★★★★☆ 3.9 · 450k ratings</div>
+            <span>Jane Austen · ★★★★☆ 3.9</span>
           </div>
-          <span class="poll-votes">38 votes</span>
+          <span class="poll-num">38</span>
         </label>
-        <label class="poll-book" for="book-c">
-          <div class="poll-radio"><div class="poll-radio-inner"></div></div>
-          <input type="radio" name="next-book" id="book-c" value="never-let-me-go" hidden>
-          <div class="poll-book-info">
+        <label class="poll-item" for="b3">
+          <div class="poll-dot"></div>
+          <input type="radio" name="book" id="b3" value="never-let-me-go" hidden>
+          <div class="poll-info">
             <h4>Never Let Me Go</h4>
-            <div class="author">Kazuo Ishiguro</div>
-            <div class="meta">★★★★☆ 3.8 · 800k ratings</div>
+            <span>Kazuo Ishiguro · ★★★★☆ 3.8</span>
           </div>
-          <span class="poll-votes">31 votes</span>
+          <span class="poll-num">31</span>
         </label>
-        <label class="poll-book" for="book-d">
-          <div class="poll-radio"><div class="poll-radio-inner"></div></div>
-          <input type="radio" name="next-book" id="book-d" value="stoner" hidden>
-          <div class="poll-book-info">
+        <label class="poll-item" for="b4">
+          <div class="poll-dot"></div>
+          <input type="radio" name="book" id="b4" value="stoner" hidden>
+          <div class="poll-info">
             <h4>Stoner</h4>
-            <div class="author">John Williams</div>
-            <div class="meta">★★★★★ 4.3 · 300k ratings</div>
+            <span>John Williams · ★★★★★ 4.3</span>
           </div>
-          <span class="poll-votes">27 votes</span>
+          <span class="poll-num">27</span>
         </label>
-        <button type="submit" class="btn-primary" style="margin:8px auto 0;font-size:14px;padding:12px 28px">Submit Your Vote →</button>
+        <button type="submit" class="btn" style="margin-top:4px;width:100%">Submit Vote</button>
       </form>
-      <div id="poll-feedback" class="form-feedback" style="margin-top:12px" role="alert"></div>
+      <div id="poll-fb" style="font-size:13px;margin-top:8px;text-align:center"></div>
     </div>
   </section>
 
-  <!-- ═══ Gallery – Notting Hill Vibe ═══ -->
-  <section class="section" aria-labelledby="gallery-title">
+  <section class="sec sec-cream">
     <div class="container">
-      <p class="section-label text-center">The Atmosphere</p>
-      <h2 class="section-title text-center" id="gallery-title">Old bookshops. Warm light. Good company.</h2>
-      <p class="section-desc text-center">Our clubs meet in the warmest corners of Inkwell. Think worn leather armchairs, shelves stacked to the ceiling, and the smell of paper and tea.</p>
-      <div class="divide"></div>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a46f?w=600&q=80" alt="Vintage bookshop interior with warm lighting" loading="lazy">
-          <div class="gallery-caption">"After all, it's a wonderful place to spend an afternoon." <em>— Notting Hill</em></div>
+      <p class="label tc">The Vibe</p>
+      <h2 class="title tc">Old bookshops. Warm light.</h2>
+      <p class="desc tc">Notting Hill, but in your neighbourhood.</p>
+      <div class="gal">
+        <div>
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a46f?w=600&q=80" alt="Bookshop interior" loading="lazy">
+          <p class="gal-cap">"A wonderful place to spend an afternoon."</p>
         </div>
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80" alt="Cosy reading corner with bookshelves" loading="lazy">
-          <div class="gallery-caption">Where every Thursday feels like a scene from a film.</div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80" alt="Cosy reading corner" loading="lazy">
+          <p class="gal-cap">Every Thursday feels like a scene from a film.</p>
         </div>
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=600&q=80" alt="Stack of vintage books and tea" loading="lazy">
-          <div class="gallery-caption">Tea. Books. Conversation. That's all you need.</div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=600&q=80" alt="Tea and books" loading="lazy">
+          <p class="gal-cap">Tea. Books. Conversation.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ Join ═══ -->
-  <section class="section section-dark" id="join" aria-labelledby="join-title">
+  <section class="sec sec-dark" id="join">
     <div class="container">
-      <p class="section-label text-center">Become a Member</p>
-      <h2 class="section-title text-center" id="join-title">Join Inkwell Book Club.</h2>
-      <p class="section-desc text-center" style="max-width:440px">Free to join. Free to attend. Show your loyalty card at the door. That's all it takes.</p>
-      <div class="divide"></div>
-      <form class="signup-form" id="signup-form" novalidate>
-        <label for="signup-name" class="sr-only">Your name</label>
-        <input type="text" id="signup-name" placeholder="Your name" required autocomplete="name">
-        <label for="signup-email" class="sr-only">Email address</label>
-        <input type="email" id="signup-email" placeholder="Your email address" required autocomplete="email">
-        <label for="signup-branch" class="sr-only">Choose your branch</label>
-        <select id="signup-branch" required>
-          <option value="">Select your local branch</option>
-          <option value="brighton">Brighton</option><option value="bristol">Bristol</option>
-          <option value="cambridge">Cambridge</option><option value="edinburgh">Edinburgh</option>
-          <option value="leeds">Leeds</option><option value="london-kensington">London – Kensington</option>
-          <option value="london-shoreditch">London – Shoreditch</option>
-          <option value="manchester">Manchester</option><option value="oxford">Oxford</option>
+      <p class="label tc">Join</p>
+      <h2 class="title tc">Become a member.</h2>
+      <p class="desc tc">Free to join. Free to attend. Just show your loyalty card at the door.</p>
+      <div class="div"></div>
+      <form class="frm" id="join-form">
+        <input type="text" id="j-name" placeholder="Your name" required>
+        <input type="email" id="j-email" placeholder="Email address" required>
+        <select id="j-branch" required>
+          <option value="">Your branch</option>
+          <option>Brighton</option><option>Bristol</option><option>Cambridge</option>
+          <option>Edinburgh</option><option>Leeds</option>
+          <option>London – Kensington</option><option>London – Shoreditch</option>
+          <option>Manchester</option><option>Oxford</option>
         </select>
-        <button type="submit" class="btn-primary" style="justify-content:center">Join the Club →</button>
-        <p class="gdpr-note">By joining you agree to receive club updates from Inkwell. <a href="#">Privacy Policy</a>.</p>
+        <button type="submit" class="btn">Join the Club →</button>
       </form>
-      <div id="form-feedback" class="form-feedback" style="margin-top:12px" role="alert"></div>
+      <div id="join-fb" style="font-size:13px;margin-top:8px;text-align:center;color:rgba(255,255,255,0.6)"></div>
     </div>
   </section>
 
-  <!-- ═══ FAQ ═══ -->
-  <section class="section" aria-labelledby="faq-title">
+  <section class="sec">
     <div class="container">
-      <p class="section-label text-center">FAQ</p>
-      <h2 class="section-title text-center" id="faq-title">Everything you need to know.</h2>
-      <p class="section-desc text-center">Book clubs can feel intimidating. Ours isn't. Here's how it works.</p>
-      <div class="faq-list" style="max-width:640px;margin:0 auto">
+      <p class="label tc">FAQ</p>
+      <h2 class="title tc">Any questions?</h2>
+      <p class="desc tc" style="margin-bottom:20px">Book clubs can feel intimidating. Ours isn't.</p>
+      <div class="faq">
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq1">
-            <span>Do I need to have read the book before coming?</span>
-            <svg class="faq-icon" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="faq-answer" id="faq1"><div class="faq-answer-inner">Not at all. Come to listen, come to discover, come because you're curious. Half our members attend the first session having just bought the book. The conversation is designed for all levels — from first-time readers to lifelong fans.</div></div>
+          <button class="faq-q">Do I need to have read the book?</button>
+          <div class="faq-a"><div class="faq-a-inner">Not at all. Come to listen, discover, or just enjoy the company. Half our members show up having just bought it.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq2">
-            <span>How do I get in? I don't have a loyalty card.</span>
-            <svg class="faq-icon" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="faq-answer" id="faq2"><div class="faq-answer-inner">You can sign up for a free Inkwell loyalty card at any branch — it takes 30 seconds. Or just sign up above and we'll have one ready for you at the door. The first session is free either way.</div></div>
+          <button class="faq-q">I don't have a loyalty card. Can I still come?</button>
+          <div class="faq-a"><div class="faq-a-inner">Yes. Sign up for a free card at any branch in 30 seconds. Or just come — your first session is free either way.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq3">
-            <span>What happens in a session?</span>
-            <svg class="faq-icon" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="faq-answer" id="faq3"><div class="faq-answer-inner">We gather in a quiet corner of the bookshop. A bookseller kicks off with a short introduction, then we open the floor. Everyone gets a chance to speak if they want — but nobody has to. It's informal, warm, and never feels like a classroom. Tea on us.</div></div>
+          <button class="faq-q">What actually happens in a session?</button>
+          <div class="faq-a"><div class="faq-a-inner">We gather in a quiet corner. A bookseller introduces the book, then we talk. No pressure to speak — but everyone gets a turn if they want.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq4">
-            <span>Can I suggest a book for next month?</span>
-            <svg class="faq-icon" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="faq-answer" id="faq4"><div class="faq-answer-inner">Yes — we compile suggestions from members every month. The top candidates go into the poll on this page, with Goodreads ratings so you can see what others thought. The book with the most votes wins. It's your club.</div></div>
+          <button class="faq-q">How do I suggest next month's book?</button>
+          <div class="faq-a"><div class="faq-a-inner">Vote in the poll above. Suggestions from members are collected every month and the winner becomes our pick. It's your club.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq5">
-            <span>Is it really free?</span>
-            <svg class="faq-icon" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="faq-answer" id="faq5"><div class="faq-answer-inner">Completely. No membership fee, no ticket, no minimum purchase. We want the door to be as wide as possible. Just bring yourself — and maybe a friend.</div></div>
+          <button class="faq-q">Is it really free?</button>
+          <div class="faq-a"><div class="faq-a-inner">Completely. No fee, no ticket, no minimum purchase. Just bring yourself and maybe a friend.</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ Footer ═══ -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div>
-        <div class="footer-logo">Inkwell <span>Book Club</span></div>
-        <p class="footer-tagline" style="margin-top:6px">Where readers meet.</p>
-      </div>
-      <div>
-        <ul class="footer-links">
-          <li><a href="#">Branches</a></li>
-          <li><a href="#">Goodreads</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <p class="footer-copy" style="margin-top:12px">&copy; 2026 Inkwell Books. Made by booksellers, for readers.</p>
-      </div>
+  <footer class="ftr">
+    <div class="container">
+      <p><strong>Inkwell <span>Book Club</span></strong> · Where readers meet.</p>
+      <p style="margin-top:4px">Branches | Goodreads | Privacy | Contact</p>
+      <p style="margin-top:8px">© 2026 Inkwell Books</p>
     </div>
   </footer>
 
   <script>
     (function(){
-      'use strict';
-
-      // FAQ accordion
-      var faqItems = document.querySelectorAll('.faq-item');
-      faqItems.forEach(function(item){
-        var btn = item.querySelector('.faq-question');
+      // FAQ
+      document.querySelectorAll('.faq-q').forEach(function(btn){
         btn.addEventListener('click', function(){
-          var isOpen = item.classList.contains('open');
-          faqItems.forEach(function(fi){
-            fi.classList.remove('open');
-            fi.querySelector('.faq-question').setAttribute('aria-expanded','false');
-          });
-          if(!isOpen){
-            item.classList.add('open');
-            btn.setAttribute('aria-expanded','true');
-          }
+          var item = this.parentElement;
+          var open = item.classList.contains('open');
+          document.querySelectorAll('.faq-item').forEach(function(f){f.classList.remove('open')});
+          if(!open) item.classList.add('open');
         });
       });
 
-      // Poll selection UI
-      var pollBooks = document.querySelectorAll('.poll-book');
-      pollBooks.forEach(function(el){
+      // Poll
+      document.querySelectorAll('.poll-item').forEach(function(el){
         el.addEventListener('click', function(){
-          pollBooks.forEach(function(b){b.classList.remove('selected')});
-          this.classList.add('selected');
-          var radio = this.querySelector('input[type="radio"]');
-          if(radio) radio.checked = true;
+          document.querySelectorAll('.poll-item').forEach(function(b){b.classList.remove('sel')});
+          this.classList.add('sel');
+          var r = this.querySelector('input[type="radio"]');
+          if(r) r.checked = true;
         });
       });
 
-      // Poll form submit
-      var pollForm = document.getElementById('poll-form');
-      var pollFeedback = document.getElementById('poll-feedback');
-      pollForm.addEventListener('submit', function(e){
+      document.getElementById('poll-form').addEventListener('submit', function(e){
         e.preventDefault();
-        var selected = pollForm.querySelector('input[name="next-book"]:checked');
-        if(!selected){
-          pollFeedback.className = 'form-feedback error';
-          pollFeedback.textContent = 'Please select a book to vote.';
-          return;
+        var sel = this.querySelector('input[name="book"]:checked');
+        var fb = document.getElementById('poll-fb');
+        if(!sel){fb.textContent='Please select a book.';fb.style.color='#c5221f';return;}
+        fb.textContent='Thanks! Results announced at the next meetup.';fb.style.color='#1e7e34';
+      });
+
+      // Join form
+      document.getElementById('join-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        var name = document.getElementById('j-name').value.trim();
+        var email = document.getElementById('j-email').value.trim();
+        var branch = document.getElementById('j-branch').value;
+        var fb = document.getElementById('join-fb');
+        if(!name||!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||!branch){
+          fb.textContent='Please fill in all fields.';return;
         }
-        pollFeedback.className = 'form-feedback success';
-        pollFeedback.textContent = 'Thanks for voting! The results will be announced at the next meetup.';
+        fb.textContent='Welcome to the club! Check your email for details.';
+        this.reset();
       });
-
-      // Signup form submit
-      var form = document.getElementById('signup-form');
-      var feedback = document.getElementById('form-feedback');
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        feedback.className = 'form-feedback';
-        feedback.style.display = 'none';
-        var name = document.getElementById('signup-name').value.trim();
-        var email = document.getElementById('signup-email').value.trim();
-        var branch = document.getElementById('signup-branch').value;
-        if(!name){feedback.textContent='Please enter your name.';feedback.className='form-feedback error';feedback.style.display='block';return;}
-        if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){feedback.textContent='Please enter a valid email.';feedback.className='form-feedback error';feedback.style.display='block';return;}
-        if(!branch){feedback.textContent='Please select your local branch.';feedback.className='form-feedback error';feedback.style.display='block';return;}
-        feedback.textContent = 'Welcome to the club! Check your email for your first meetup invitation.';
-        feedback.className = 'form-feedback success';
-        feedback.style.display = 'block';
-        form.reset();
-      });
-
     })();
   </script>
 

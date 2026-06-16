@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inkwell Insiders — Join Free Digital Loyalty | Inkwell Books</title>
+  <meta name="description" content="Join Inkwell Insiders — free digital loyalty that works alongside your stamp card. Christmas guide + 10% off when you sign up today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #1A1A2E;
+      --ember: #C73E1D;
+      --cream: #FDF8F0;
+      --charcoal: #2D2D2D;
+      --gold: #D4A853;
+      --sage: #8BA888;
+      --clay: #E8D5C4;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --radius: 12px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--ember);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── Sticky Header ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--clay);
+      box-shadow: var(--shadow);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .header-logo svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .header-logo-text {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .header-logo-text span {
+      color: var(--ember);
+    }
+
+    .branch-nav-select {
+      font-family: var(--font-body);
+      font-size: 14px;
+      padding: 8px 32px 8px 12px;
+      border: 1px solid var(--clay);
+      border-radius: var(--radius);
+      background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%231A1A2E'/%3E%3C/svg%3E") no-repeat right 12px center;
+      appearance: none;
+      -webkit-appearance: none;
+      min-height: 44px;
+      cursor: pointer;
+      max-width: 180px;
+      color: var(--charcoal);
+    }
+
+    .branch-nav-select:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      background: linear-gradient(145deg, #FDF1DC 0%, #FCE8D0 40%, #F5DCC5 100%);
+      overflow: hidden;
+      padding: 60px 0 50px;
+    }
+
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    .hero-bg-pattern svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      margin-bottom: 28px;
+      max-width: 520px;
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 440px;
+    }
+
+    .signup-form input,
+    .signup-form select {
+      font-family: var(--font-body);
+      font-size: 15px;
+      padding: 12px 16px;
+      border: 1px solid var(--clay);
+      border-radius: var(--radius);
+      background: white;
+      min-height: 48px;
+      color: var(--charcoal);
+    }
+
+    .signup-form input::placeholder {
+      color: #8a8a8a;
+    }
+
+    .signup-form input:focus,
+    .signup-form select:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+      border-color: var(--gold);
+    }
+
+    .signup-form select {
+      background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%231A1A2E'/%3E%3C/svg%3E") no-repeat right 14px center;
+      appearance: none;
+      -webkit-appearance: none;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .btn-cta {
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 24px;
+      background: var(--ember);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      min-height: 48px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-cta:hover {
+      background: #a83316;
+    }
+
+    .btn-cta:active {
+      transform: scale(0.97);
+    }
+
+    .btn-cta:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    .trust-line {
+      font-size: 13px;
+      color: #6b6b6b;
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .trust-line svg {
+      flex-shrink: 0;
+    }
+
+    .gdpr-note {
+      font-size: 12px;
+      color: #888;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* ── Section common ── */
+    .section {
+      padding: 56px 0;
+    }
+
+    .section-label {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .section-desc {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 32px;
+      max-width: 560px;
+    }
+
+    /* ── How it Works ── */
+    .how-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .step-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--clay);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .step-card h3 {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .step-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .step-number {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ember);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Perk Cards ── */
+    .perks-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .perk-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid transparent;
+    }
+
+    .perk-card:nth-child(1) { border-left-color: var(--gold); }
+    .perk-card:nth-child(2) { border-left-color: var(--sage); }
+    .perk-card:nth-child(3) { border-left-color: var(--ember); }
+    .perk-card:nth-child(4) { border-left-color: var(--ink); }
+
+    .perk-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 10px;
+    }
+
+    .perk-card h3 {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .perk-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ── Branch Selector ── */
+    .branch-selector-section {
+      background: white;
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .branch-selector-section .section-title {
+      text-align: center;
+    }
+
+    .branch-selector-section .section-desc {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .branch-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .branch-btn {
+      font-family: var(--font-body);
+      font-size: 14px;
+      padding: 10px 8px;
+      background: var(--cream);
+      border: 1px solid var(--clay);
+      border-radius: var(--radius);
+      cursor: pointer;
+      min-height: 44px;
+      transition: all 0.2s;
+      color: var(--charcoal);
+    }
+
+    .branch-btn:hover,
+    .branch-btn:focus {
+      background: var(--clay);
+      border-color: var(--gold);
+    }
+
+    .branch-btn.active {
+      background: var(--ink);
+      color: white;
+      border-color: var(--ink);
+    }
+
+    /* ── Social Proof ── */
+    .social-proof {
+      text-align: center;
+    }
+
+    .social-proof blockquote {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--ink);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .social-proof cite {
+      display: block;
+      margin-top: 10px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-style: normal;
+      color: #6b6b6b;
+    }
+
+    /* ── FAQ Accordion ── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      padding: 16px 20px;
+      background: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      min-height: 48px;
+    }
+
+    .faq-question:hover {
+      background: #faf5ef;
+    }
+
+    .faq-question:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: -2px;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s ease;
+    }
+
+    .faq-answer-inner {
+      padding: 0 20px 16px;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+    }
+
+    .faq-item.open .faq-answer-inner {
+      padding-bottom: 16px;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.7);
+      padding: 40px 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .footer-logo-text {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .footer-logo-text span {
+      color: var(--gold);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.8;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+    }
+
+    /* ── Form feedback ── */
+    .form-feedback {
+      font-size: 14px;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      display: none;
+    }
+
+    .form-feedback.success {
+      display: block;
+      background: #e6f4ea;
+      color: #1e7e34;
+      border: 1px solid #b7dfc5;
+    }
+
+    .form-feedback.error {
+      display: block;
+      background: #fce8e6;
+      color: #c5221f;
+      border: 1px solid #f5c6cb;
+    }
+
+    /* ── Utility ── */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mb-8 {
+      margin-bottom: 8px;
+    }
+
+    /* ── Desktop / Tablet ── */
+    @media (min-width: 640px) {
+      .signup-form {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .signup-form .field-email {
+        flex: 1 1 100%;
+      }
+
+      .signup-form .field-branch {
+        flex: 1;
+      }
+
+      .signup-form .btn-cta {
+        flex-shrink: 0;
+      }
+
+      .how-steps {
+        flex-direction: row;
+        gap: 16px;
+      }
+
+      .step-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1;
+        padding: 24px 18px;
+      }
+
+      .perks-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .branch-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .hero {
+        padding: 80px 0 70px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .signup-form {
+        flex-wrap: nowrap;
+      }
+
+      .signup-form .field-email {
+        flex: 1;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .perks-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .branch-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 500px;
+      }
+
+      .footer-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    @media (min-width: 640px) and (max-width: 899px) {
+      .signup-form {
+        flex-direction: row;
+      }
+      .signup-form .field-email {
+        flex: 1 1 100%;
+      }
+      .signup-form .field-branch {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ Sticky Header ═══ -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="header-logo" aria-label="Inkwell Books home">
+        <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <rect x="6" y="4" width="24" height="28" rx="3" fill="#C73E1D"/>
+          <rect x="10" y="8" width="7" height="18" rx="1" fill="#FDF8F0" opacity="0.9"/>
+          <rect x="19" y="8" width="7" height="14" rx="1" fill="#FDF8F0" opacity="0.9"/>
+          <path d="M6 16h24v1H6z" fill="#1A1A2E" opacity="0.15"/>
+        </svg>
+        <span class="header-logo-text">Inkwell <span>Insiders</span></span>
+      </a>
+      <label for="header-branch" class="sr-only">Select your branch</label>
+      <select id="header-branch" class="branch-nav-select" aria-label="Select your branch">
+        <option value="">Select branch</option>
+        <option value="brighton">Brighton</option>
+        <option value="bristol">Bristol</option>
+        <option value="cambridge">Cambridge</option>
+        <option value="edinburgh">Edinburgh</option>
+        <option value="leeds">Leeds</option>
+        <option value="london-kensington">London – Kensington</option>
+        <option value="london-shoreditch">London – Shoreditch</option>
+        <option value="manchester">Manchester</option>
+        <option value="oxford">Oxford</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- ═══ Hero ═══ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg-pattern" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+        <defs>
+          <pattern id="book-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+            <rect width="60" height="60" fill="none"/>
+            <g fill="#1A1A2E" opacity="0.25">
+              <path d="M18 12c-1.1 0-2 .9-2 2v24c0 1.1.9 2 2 2h24c1.1 0 2-.9 2-2V14c0-1.1-.9-2-2-2H18zm0 2h24v20H18V14zm0 22h24v2H18v-2z"/>
+              <rect x="21" y="17" width="6" height="12" rx="1" opacity="0.4"/>
+              <rect x="29" y="17" width="6" height="8" rx="1" opacity="0.4"/>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#book-pattern)"/>
+      </svg>
+    </div>
+    <div class="container">
+      <h1 id="hero-title">Your next chapter starts here.</h1>
+      <p class="hero-subtitle">Join Inkwell Insiders — free digital loyalty that works alongside your stamp card. Christmas guide + 10% off when you sign up today.</p>
+      <form class="signup-form" id="signup-form" novalidate>
+        <label for="signup-email" class="sr-only">Email address</label>
+        <input type="email" id="signup-email" class="field-email" placeholder="Your email address" required autocomplete="email">
+
+        <label for="signup-branch" class="sr-only">Choose your local branch</label>
+        <select id="signup-branch" class="field-branch" required>
+          <option value="">Select your branch</option>
+          <option value="brighton">Brighton</option>
+          <option value="bristol">Bristol</option>
+          <option value="cambridge">Cambridge</option>
+          <option value="edinburgh">Edinburgh</option>
+          <option value="leeds">Leeds</option>
+          <option value="london-kensington">London – Kensington</option>
+          <option value="london-shoreditch">London – Shoreditch</option>
+          <option value="manchester">Manchester</option>
+          <option value="oxford">Oxford</option>
+        </select>
+
+        <button type="submit" class="btn-cta">→ Become an Insider</button>
+      </form>
+      <div class="trust-line">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="6" stroke="#6b6b6b" stroke-width="1.5"/>
+          <path d="M4.5 7l2 2 3-4" stroke="#6b6b6b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        No spam. Unsubscribe anytime.
+      </div>
+      <p class="gdpr-note">By signing up you agree to receive emails from Inkwell Books. Your data is handled in accordance with our <a href="#" style="color:#555;text-decoration:underline;">Privacy Policy</a>.</p>
+      <div id="form-feedback" class="form-feedback" role="alert"></div>
+    </div>
+  </section>
+
+  <!-- ═══ How It Works ═══ -->
+  <section class="section" aria-labelledby="how-title">
+    <div class="container">
+      <p class="section-label">How it works</p>
+      <h2 class="section-title" id="how-title">Three simple steps.</h2>
+      <p class="section-desc">Join free in under a minute and start earning from your next visit.</p>
+      <div class="how-steps">
+        <div class="step-card">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10.5V20a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2h6"/>
+              <path d="M16 2h6v6"/>
+              <path d="M11 13l6-6"/>
+              <path d="M20 2L8 14"/>
+            </svg>
+          </div>
+          <div>
+            <span class="step-number">Step 1</span>
+            <h3>Sign up</h3>
+            <p>Enter your email and choose your local branch. That's it — you're in.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 10h20"/>
+              <path d="M8 2v4"/>
+              <path d="M16 2v4"/>
+            </svg>
+          </div>
+          <div>
+            <span class="step-number">Step 2</span>
+            <h3>Visit</h3>
+            <p>Pop into any Inkwell Books shop and give your email at the till.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <span class="step-number">Step 3</span>
+            <h3>Enjoy</h3>
+            <p>Unlock perks, picks, and rewards — starting with 10% off your next book.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ What You Get ═══ -->
+  <section class="section" style="padding-top:0;" aria-labelledby="perks-title">
+    <div class="container">
+      <p class="section-label">What you get</p>
+      <h2 class="section-title" id="perks-title">Perks for book lovers.</h2>
+      <p class="section-desc">Every perk is designed to make your reading life richer — and your wallet happier.</p>
+      <div class="perks-grid">
+        <div class="perk-card">
+          <div class="perk-icon" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <rect x="4" y="6" width="28" height="24" rx="3" fill="#D4A853" opacity="0.15"/>
+              <path d="M12 10h12v14H12V10z" fill="#D4A853" opacity="0.3"/>
+              <path d="M14 14h8v1h-8zM14 17h8v1h-8zM14 20h5v1h-5z" fill="#D4A853"/>
+            </svg>
+          </div>
+          <h3>Christmas Guide + 10% off</h3>
+          <p>Get our curated Christmas Gift Guide and an exclusive 10% discount on your first month of membership.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <circle cx="18" cy="18" r="10" fill="#8BA888" opacity="0.15"/>
+              <path d="M12 18l4 4 8-8" stroke="#8BA888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Monthly staff picks</h3>
+          <p>Hand-picked recommendations from our booksellers delivered straight to your inbox every month.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M18 4l2.5 7.5H28l-6 4.5 2.5 7.5L18 19l-6.5 4.5L14 16l-6-4.5h7.5L18 4z" fill="#C73E1D" opacity="0.15"/>
+              <path d="M18 7l1.5 5H25l-4 3 1.5 5L18 17l-4.5 3L15 15l-4-3h5.5L18 7z" fill="#C73E1D" opacity="0.3"/>
+            </svg>
+          </div>
+          <h3>Birthday reward</h3>
+          <p>A special birthday treat — because you deserve a present on your day.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <rect x="6" y="6" width="24" height="24" rx="3" fill="#1A1A2E" opacity="0.1"/>
+              <text x="18" y="22" font-size="14" font-weight="700" text-anchor="middle" fill="#1A1A2E">10</text>
+            </svg>
+          </div>
+          <h3>10th purchase free</h3>
+          <p>Buy ten books, get the eleventh on us. Your stamp card just went digital.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Your Local Bookshop ═══ -->
+  <section class="section" style="padding-top:0;" aria-labelledby="branch-title">
+    <div class="container">
+      <div class="branch-selector-section">
+        <p class="section-label">Your local bookshop</p>
+        <h2 class="section-title" id="branch-title">Find your branch.</h2>
+        <p class="section-desc">We're in nine cities across the UK. Pick yours to get started.</p>
+        <div class="branch-grid" id="branch-grid" role="radiogroup" aria-label="Select your branch">
+          <button class="branch-btn" role="radio" aria-checked="false" data-branch="brighton">Brighton</button>
+          <button class="branch-btn" role="radio" aria-checked="false" data-branch="bristol">Bristol</button>
+          <button class="branch-btn" role="radio" aria-checked="false" data-branch="cambridge">Cambridge</button>
+          <button class="branch-btn" role="radio" aria-checked="false" data-branch="edinburgh">Edinburgh</button>
+          <button class="branch-btn" role="radio" aria-checked="false" data-branch="leeds">Leeds</button>
+          <button class="branch-btn" role="radio" aria-checked="false" data-branch="london-kensington">London – Kensington</button>
+          <button class="branch-btn" role="radio" aria-checked="false" data-branch="london-shoreditch">London – Shoreditch</button>
+          <button class="branch-btn" role="radio" aria-checked="false" data-branch="manchester">Manchester</button>
+          <button class="branch-btn" role="radio" aria-checked="false" data-branch="oxford">Oxford</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Social Proof ═══ -->
+  <section class="section social-proof" style="padding-top:0;" aria-labelledby="social-title">
+    <div class="container">
+      <h2 id="social-title" class="sr-only">Social proof</h2>
+      <blockquote>
+        “Already 340+ readers have joined across 9 branches this month.”
+        <cite>— Inkwell Books team</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="section" aria-labelledby="faq-title">
+    <div class="container">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title" id="faq-title">Got questions?</h2>
+      <p class="section-desc">We've got answers. Here's what new Insiders usually ask.</p>
+      <div class="faq-list" role="list">
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq1-answer">
+            <span>I already have a paper stamp card. Can I use both?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq1-answer" role="region">
+            <div class="faq-answer-inner">Absolutely. Inkwell Insiders works alongside your existing paper stamp card — they're not going anywhere. Use your digital perks and keep stamping as normal. The best of both worlds.</div>
+          </div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq2-answer">
+            <span>How do digital stamps work?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq2-answer" role="region">
+            <div class="faq-answer-inner">Give your email at the till and we'll track your purchases digitally. No app to download, no card to carry. Every 10th book is free, and we'll remind you when you're getting close.</div>
+          </div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq3-answer">
+            <span>Is there a catch? Does it cost anything?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq3-answer" role="region">
+            <div class="faq-answer-inner">No catch and no cost. Inkwell Insiders is completely free to join. No subscription, no hidden fees — just perks for people who love books.</div>
+          </div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq4-answer">
+            <span>What happens after Christmas? Will the perks continue?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq4-answer" role="region">
+            <div class="faq-answer-inner">Yes — Insiders is built for the long haul. The Christmas Guide + 10% is your welcome bonus, but your monthly picks, birthday reward, and 10th purchase free are yours all year round.</div>
+          </div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq5-answer">
+            <span>Can I switch my local branch if I move?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq5-answer" role="region">
+            <div class="faq-answer-inner">Of course. Just drop us an email or mention it on your next visit and we'll update your branch. Your perks and stamp count move with you.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">
+          <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect x="6" y="4" width="24" height="28" rx="3" fill="#D4A853"/>
+            <rect x="10" y="8" width="7" height="18" rx="1" fill="#1A1A2E" opacity="0.8"/>
+            <rect x="19" y="8" width="7" height="14" rx="1" fill="#1A1A2E" opacity="0.8"/>
+            <path d="M6 16h24v1H6z" fill="#FDF8F0" opacity="0.2"/>
+          </svg>
+          <span class="footer-logo-text">Inkwell <span>Insiders</span></span>
+        </div>
+        <p class="footer-tagline" style="margin-top:8px;">Books, community, and a little magic.</p>
+      </div>
+      <div>
+        <ul class="footer-links">
+          <li><a href="#">About Inkwell</a></li>
+          <li><a href="#">Find a branch</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <p class="footer-copy" style="margin-top:14px;">&copy; 2026 Inkwell Books Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Google Analytics 4 placeholder ═══ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- ═══ Vanilla JS ═══ -->
+  <script>
+    (function() {
+      'use strict';
+
+      /* ── URL param: pre-select branch ── */
+      const params = new URLSearchParams(window.location.search);
+      const branchParam = params.get('branch');
+      const branchSelects = [
+        document.getElementById('header-branch'),
+        document.getElementById('signup-branch')
+      ];
+      const branchButtons = document.querySelectorAll('.branch-btn');
+
+      if (branchParam) {
+        var matched = false;
+        branchSelects.forEach(function(sel) {
+          if (sel) {
+            var option = Array.from(sel.options).find(function(opt) {
+              return opt.value === branchParam;
+            });
+            if (option) {
+              sel.value = branchParam;
+              matched = true;
+            }
+          }
+        });
+        if (matched) {
+          branchButtons.forEach(function(btn) {
+            if (btn.dataset.branch === branchParam) {
+              btn.classList.add('active');
+              btn.setAttribute('aria-checked', 'true');
+            }
+          });
+        }
+      }
+
+      /* ── Sync branch selects ── */
+      branchSelects.forEach(function(sel) {
+        if (!sel) return;
+        sel.addEventListener('change', function() {
+          var val = this.value;
+          branchSelects.forEach(function(s) {
+            if (s && s !== sel) s.value = val;
+          });
+          branchButtons.forEach(function(btn) {
+            var match = btn.dataset.branch === val;
+            btn.classList.toggle('active', match);
+            btn.setAttribute('aria-checked', match ? 'true' : 'false');
+          });
+        });
+      });
+
+      /* ── Branch grid buttons ── */
+      branchButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var val = this.dataset.branch;
+          branchButtons.forEach(function(b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-checked', 'false');
+          });
+          this.classList.add('active');
+          this.setAttribute('aria-checked', 'true');
+          branchSelects.forEach(function(s) {
+            if (s) s.value = val;
+          });
+        });
+      });
+
+      /* ── FAQ accordion ── */
+      var faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(function(item) {
+        var btn = item.querySelector('.faq-question');
+        var answer = item.querySelector('.faq-answer');
+        btn.addEventListener('click', function() {
+          var isOpen = item.classList.contains('open');
+          // Close all
+          faqItems.forEach(function(fi) {
+            fi.classList.remove('open');
+            fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      /* ── Form submission ── */
+      var form = document.getElementById('signup-form');
+      var feedback = document.getElementById('form-feedback');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        feedback.className = 'form-feedback';
+        feedback.style.display = 'none';
+        feedback.textContent = '';
+
+        var email = document.getElementById('signup-email').value.trim();
+        var branch = document.getElementById('signup-branch').value;
+
+        if (!email) {
+          feedback.textContent = 'Please enter your email address.';
+          feedback.className = 'form-feedback error';
+          feedback.style.display = 'block';
+          return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          feedback.textContent = 'Please enter a valid email address.';
+          feedback.className = 'form-feedback error';
+          feedback.style.display = 'block';
+          return;
+        }
+
+        if (!branch) {
+          feedback.textContent = 'Please select your local branch.';
+          feedback.className = 'form-feedback error';
+          feedback.style.display = 'block';
+          return;
+        }
+
+        // Simulate success (Mailchimp-style)
+        feedback.textContent = 'You\'re in! Check your email for your welcome message and Christmas Guide.';
+        feedback.className = 'form-feedback success';
+        feedback.style.display = 'block';
+        form.reset();
+        // Also reset branch selects and grid buttons
+        branchSelects.forEach(function(s) { if (s) s.value = ''; });
+        branchButtons.forEach(function(b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-checked', 'false');
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>
